@@ -1,7 +1,4 @@
-# sgbarker4
+# sgbarker
 
- - Statically hosted html page.
- - Blog at /blog uses Ghost.
- - Nginx rules to route blog traffic.
-
-`cd public && scp -r public user@ip:/var/www/`
+ - Statically hosted html pages.
+ - Blog at /blog uses Ghost, run locally, with HTML generated, using https://github.com/Fried-Chicken/ghost-static-site-generator
