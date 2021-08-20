@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html ⚡>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <title>How we reduced our failed payment rate by 92%</title>
+
+    <link rel="icon" href="./../../favicon.png" type="image/png" />
+    <link rel="canonical" href="https://sgbarker.com/blog/how-we-reduced-our-failed-payment-rate-by-92-per-cent/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    
+    <meta property="og:site_name" content="Steve Barker" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="How we reduced our failed payment rate by 92%" />
+    <meta property="og:description" content="Originally posted on Gousto Engineering &amp;amp; Data Most Gousto customers choose to get their recipe boxes on a subscription basis: every week they choose their recipes from our menu, and we pick, pack and deliver them to their door. To give customers as much flexibility as possible, we let customers" />
+    <meta property="og:url" content="https://sgbarker.com/blog/how-we-reduced-our-failed-payment-rate-by-92-per-cent/" />
+    <meta property="og:image" content="https://sgbarker.com/blog/content/images/2021/03/pre-auth-flow-1.png" />
+    <meta property="article:published_time" content="2020-11-16T18:15:00.000Z" />
+    <meta property="article:modified_time" content="2021-03-20T18:17:29.000Z" />
+    <meta property="article:tag" content="Software Engineering" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How we reduced our failed payment rate by 92%" />
+    <meta name="twitter:description" content="Originally posted on Gousto Engineering &amp;amp; Data Most Gousto customers choose to get their recipe boxes on a subscription basis: every week they choose their recipes from our menu, and we pick, pack and deliver them to their door. To give customers as much flexibility as possible, we let customers" />
+    <meta name="twitter:url" content="https://sgbarker.com/blog/how-we-reduced-our-failed-payment-rate-by-92-per-cent/" />
+    <meta name="twitter:image" content="https://sgbarker.com/blog/content/images/2021/03/pre-auth-flow-1.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Steve Barker" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Software Engineering" />
+    <meta property="og:image:width" content="1696" />
+    <meta property="og:image:height" content="648" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Steve Barker",
+        "url": "https://sgbarker.com/blog/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://sgbarker.com/blog/favicon.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Steve Barker",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://sgbarker.com/blog/content/images/2021/08/ben-sweet-2LowviVHZ-E-unsplash.jpg",
+            "width": 2000,
+            "height": 1125
+        },
+        "url": "https://sgbarker.com/blog/author/steve/",
+        "sameAs": [
+            "https://sgbarker.com"
+        ]
+    },
+    "headline": "How we reduced our failed payment rate by 92%",
+    "url": "https://sgbarker.com/blog/how-we-reduced-our-failed-payment-rate-by-92-per-cent/",
+    "datePublished": "2020-11-16T18:15:00.000Z",
+    "dateModified": "2021-03-20T18:17:29.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://sgbarker.com/blog/content/images/2021/03/pre-auth-flow-1.png",
+        "width": 1696,
+        "height": 648
+    },
+    "keywords": "Software Engineering",
+    "description": "Originally posted on Gousto Engineering &amp; Data\n[https://medium.com/gousto-engineering-techbrunch]\n\nMost Gousto customers choose to get their recipe boxes\n[https://www.gousto.co.uk/] on a subscription basis: every week they choose\ntheir recipes from our menu, and we pick, pack and deliver them to their door.\nTo give customers as much flexibility as possible, we let customers edit their\nbox right up until it’s sent to one of our factories for picking.\n\nThis process works really well most of the ti",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sgbarker.com/blog/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.12" />
+    <link rel="alternate" type="application/rss+xml" title="Steve Barker" href="https://sgbarker.com/blog/rss/" />
+
+    <style amp-custom>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        font-size: 62.5%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        color: #3a4145;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+        font-size: 1.7rem;
+        line-height: 1.55em;
+        font-weight: 400;
+        font-style: normal;
+        background: #fff;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    p,
+    ul,
+    ol,
+    li,
+    dl,
+    dd,
+    hr,
+    pre,
+    form,
+    table,
+    video,
+    figure,
+    figcaption,
+    blockquote {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul[class],
+    ol[class] {
+        padding: 0;
+        list-style: none;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    input,
+    button,
+    select,
+    textarea {
+        font: inherit;
+        -webkit-appearance: none;
+    }
+
+    fieldset {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    label {
+        display: block;
+        font-size: 0.9em;
+        font-weight: 700;
+    }
+
+    hr {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid currentcolor;
+        opacity: 0.1;
+    }
+
+    ::selection {
+        text-shadow: none;
+        background: #cbeafb;
+    }
+
+    mark {
+        background-color: #fdffb6;
+    }
+
+    small {
+        font-size: 80%;
+    }
+
+    sub,
+    sup {
+        position: relative;
+        font-size: 75%;
+        line-height: 0;
+        vertical-align: baseline;
+    }
+    sup {
+        top: -0.5em;
+    }
+    sub {
+        bottom: -0.25em;
+    }
+
+    ul li + li {
+        margin-top: 0.6em;
+    }
+
+    a {
+        color: var(--ghost-accent-color, #1292EE);
+        text-decoration-skip-ink: auto;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        font-weight: 700;
+        color: #121212;
+        line-height: 1.4em;
+    }
+
+    h1 {
+        font-size: 3.4rem;
+        line-height: 1.1em;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+        line-height: 1.2em;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    h4 {
+        font-size: 1.7rem;
+    }
+
+    h5 {
+        font-size: 1.6rem;
+    }
+
+    h6 {
+        font-size: 1.6rem;
+    }
+
+    amp-img {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    amp-img img {
+        object-fit: cover;
+    }
+
+    .page-header {
+        padding: 50px 5vmin 30px;
+        text-align: center;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .page-header a {
+        color: #121212;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.6rem;
+        letter-spacing: -0.1px;
+    }
+
+    .post {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .post-header {
+        margin: 0 5vmin 5vmin;
+        text-align: center;
+    }
+
+    .post-meta {
+        margin: 1rem 0 0 0;
+        text-transform: uppercase;
+        color: #738a94;
+        font-weight: 500;
+        font-size: 1.3rem;
+    }
+
+    .post-image {
+        margin: 0 0 5vmin;
+    }
+
+    .post-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .post-content {
+        padding: 0 5vmin;
+    }
+
+    .post-content > * + * {
+        margin-top: 1.5em;
+    }
+
+    .post-content [id]:not(:first-child) {
+        margin: 2em 0 0;
+    }
+
+    .post-content > [id] + * {
+        margin-top: 1rem;
+    }
+
+    .post-content [id] + .kg-card,
+    .post-content blockquote + .kg-card {
+        margin-top: 40px;
+    }
+
+    .post-content > ul,
+    .post-content > ol,
+    .post-content > dl {
+        padding-left: 1.9em;
+    }
+
+    .post-content hr {
+        margin-top: 40px;
+    }
+
+    .post .post-content hr + * {
+        margin-top: 40px;
+    }
+
+    .post-content amp-img {
+        background-color: #f8f8f8;
+    }
+
+    .post-content blockquote {
+        position: relative;
+        font-style: italic;
+    }
+
+    .post-content blockquote::before {
+        content: "";
+        position: absolute;
+        left: -1.5em;
+        top: 0;
+        bottom: 0;
+        width: 0.3rem;
+        background: var(--ghost-accent-color, #1292EE);
+    }
+
+    .post-content :not(.kg-card):not([id]) + .kg-card {
+        margin-top: 40px;
+    }
+
+    .post-content .kg-card + :not(.kg-card) {
+        margin-top: 40px;
+    }
+
+    .kg-card figcaption {
+        padding: 1.5rem 1.5rem 0;
+        text-align: center;
+        font-weight: 500;
+        font-size: 1.3rem;
+        line-height: 1.4em;
+        opacity: 0.6;
+    }
+
+    .kg-card figcaption strong {
+        color: rgba(0,0,0,0.8);
+    }
+
+    .post-content :not(pre) code {
+        vertical-align: middle;
+        padding: 0.15em 0.4em 0.15em;
+        border: #e1eaef 1px solid;
+        font-weight: 400;
+        font-size: 0.9em;
+        line-height: 1em;
+        color: #15171a;
+        background: #f0f6f9;
+        border-radius: 0.25em;
+    }
+
+    .post-content > pre {
+        overflow: scroll;
+        padding: 16px 20px;
+        color: #fff;
+        background: #1F2428;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px -2px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.4);
+    }
+
+    .kg-embed-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .kg-image-card img {
+        margin: auto;
+    }
+
+    .kg-gallery-card + .kg-gallery-card {
+        margin-top: 0.75em;
+    }
+
+    .kg-gallery-container {
+        position: relative;
+    }
+
+    .kg-gallery-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .kg-gallery-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .kg-gallery-row:not(:first-of-type) {
+        margin: 0.75em 0 0 0;
+    }
+
+    .kg-gallery-image:not(:first-of-type) {
+        margin: 0 0 0 0.75em;
+    }
+
+    .kg-bookmark-card,
+    .kg-bookmark-publisher {
+        position: relative;
+    }
+
+    .kg-bookmark-container,
+    .kg-bookmark-container:hover {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        color: currentColor;
+        background: rgba(255,255,255,0.6);
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+    }
+
+    .kg-bookmark-content {
+        flex-basis: 0;
+        flex-grow: 999;
+        padding: 20px;
+        order: 1;
+    }
+
+    .kg-bookmark-title {
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 1.3em;
+    }
+
+    .kg-bookmark-description {
+        display: -webkit-box;
+        max-height: 45px;
+        margin: 0.5em 0 0 0;
+        font-size: 1.4rem;
+        line-height: 1.55em;
+        overflow: hidden;
+        opacity: 0.8;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .kg-bookmark-metadata {
+        margin-top: 20px;
+    }
+
+    .kg-bookmark-metadata {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 1.3rem;
+        line-height: 1.3em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .kg-bookmark-description {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .kg-bookmark-metadata amp-img {
+        width: 18px;
+        height: 18px;
+        max-width: 18px;
+        max-height: 18px;
+        margin-right: 10px;
+    }
+
+    .kg-bookmark-thumbnail {
+        display: flex;
+        flex-basis: 20rem;
+        flex-grow: 1;
+        justify-content: flex-end;
+    }
+
+    .kg-bookmark-thumbnail amp-img {
+        max-height: 200px;
+    }
+
+    .kg-bookmark-author {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .kg-bookmark-publisher::before {
+        content: "•";
+        margin: 0 .5em;
+    }
+
+    .kg-width-full.kg-card-hascaption {
+        display: grid;
+        grid-template-columns: inherit;
+    }
+
+    .post-content table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .post-content th {
+        padding: 0.5em 0.8em;
+        text-align: left;
+        font-size: .75em;
+        text-transform: uppercase;
+    }
+
+    .post-content td {
+        padding: 0.4em 0.7em;
+    }
+
+    .post-content tbody tr:nth-child(2n + 1) {
+        background-color: rgba(0,0,0,0.1);
+        padding: 1px;
+    }
+
+    .post-content tbody tr:nth-child(2n + 2) td:last-child {
+        box-shadow:
+            inset 1px 0 rgba(0,0,0,0.1),
+            inset -1px 0 rgba(0,0,0,0.1);
+    }
+
+    .post-content tbody tr:nth-child(2n + 2) td {
+        box-shadow: inset 1px 0 rgba(0,0,0,0.1);
+    }
+
+    .post-content tbody tr:last-child {
+        border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+
+    .page-footer {
+        padding: 60px 5vmin;
+        margin: 60px auto 0;
+        text-align: center;
+        background-color: #f8f8f8;
+    }
+
+    .page-footer h3 {
+        margin: 0.5rem 0 0 0;
+    }
+
+    .page-footer p {
+        max-width: 500px;
+        margin: 1rem auto 1.5rem;
+        font-size: 1.7rem;
+        line-height: 1.5em;
+        color: rgba(0,0,0,0.6)
+    }
+
+    .powered {
+        display: inline-flex;
+        align-items: center;
+        margin: 30px 0 0;
+        padding: 6px 9px 6px 6px;
+        border: rgba(0,0,0,0.1) 1px solid;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.2px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        font-weight: 500;
+        color: #222;
+        text-decoration: none;
+        background: #fff;
+        border-radius: 6px;
+    }
+
+    .powered svg {
+        height: 16px;
+        width: 16px;
+        margin: 0 6px 0 0;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            font-size: 1.6rem;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        h1 {
+            font-size: 2.6rem;
+            line-height: 1.15em;
+        }
+        h2 {
+            font-size: 2rem;
+            line-height: 1.2em;
+        }
+        h3 {
+            font-size: 1.7rem;
+        }
+    }
+
+    :root {--ghost-accent-color: #000000;}
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="page-header">
+        <a href="https://sgbarker.com/blog">
+                <amp-img class="site-icon" src="__GHOST_URL__/content/images/2021/04/apple-icon-180x180.png" width="50" height="50" layout="fixed"></amp-img>
+        </a>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">How we reduced our failed payment rate by 92%</h1>
+                <section class="post-meta">
+                    Steve Barker -
+                    <time class="post-date" datetime="2020-11-16">16 Nov 2020</time>
+                </section>
+            </header>
+            <figure class="post-image">
+                <amp-img src="./../..//content/images/2021/03/pre-auth-flow-1.png" width="600" height="340" layout="responsive"></amp-img>
+            </figure>
+            <section class="post-content">
+
+                <p><em>Originally posted on <a href="https://medium.com/gousto-engineering-techbrunch">Gousto Engineering &amp; Data</a></em></p><p>Most Gousto customers choose to get their <a href="https://www.gousto.co.uk/" rel="noopener">recipe boxes</a> on a subscription basis: every week they choose their recipes from our menu, and we pick, pack and deliver them to their door. To give customers as much flexibility as possible, we let customers edit their box right up until it’s sent to one of our factories for picking.</p><figure class="kg-card kg-image-card kg-width-wide"></figure><h4 id="this-process-works-really-well-most-of-the-time-but-what-happens-when-a-customer%E2%80%99s-payment-fails">This process works really well most of the time. But what happens when a customer’s payment fails?</h4><p>It’s natural that a proportion of payments will fail — customers’ cards have changed, or there aren’t enough funds in the account. At Gousto we had a natural failed payment rate of around 2% for existing customers.</p><p>Until recently we only had two ways of handling a failed payment. First, we could send out the box anyway and put a debit on the customer’s account. Alternatively, we could just cancel the customer’s order.</p><p>Neither of these is a good solution. We never want to have to cancel a customer’s box, nor do we want to put a customer into ‘debt’. The majority of failed payments are because a customer has forgotten to update their card details and are still expecting to receive their order. I’m sure you can imagine how frustrating it might be to lose your food delivery for the week just because your debit card expired.</p><h4 id="how-did-we-reduce-failed-payments">How did we reduce failed payments?</h4><p>We decided to request a ‘dry run’ payment 24 hours before the actual payment is due — this is known as a <em>pre-authorisation. </em>Pre-auths allow merchants like Gousto to ‘reserve’ some amount of money against a customer’s payment method, without actually charging them. When we attempt to reserve these funds, we’ll receive a success or failure response from the customer’s bank. If unsuccessful, we can ask the customer to update their payment details.</p><figure class="kg-card kg-image-card kg-width-wide"></figure><p>As you can see, pre-auths allow us to catch a failed payment. We then email customers and give them 24 hours to update their card details in time for the final payment. This alone reduced our failed payment rate by 92%!</p><p>Many customers will receive a notification from their bank when the pre-auth is requested, which serves as an extra reminder of their upcoming box, with time for them to update their recipes before it’s dispatched. If the customer no longer wishes to receive their order, they also have the opportunity to cancel it through the app before it’s already paid for and dispatched. This reduces wasteful unintentional orders.</p><h4 id="how-do-pre-auths-actually-work">How do pre-auths actually work?</h4><p>When a merchant <a href="https://www.paymill.com/en/glossary/card-pre-authorisation/" rel="noopener">pre-authorises</a> funds on an account, it doesn’t have access to those funds yet; they’re ring-fenced for that merchant to use at some future point in time and the customer can’t use those funds for anything else.</p><p>If the merchant doesn’t end up charging the customer, the funds are released back to the customer by their bank after a period of time, typically five days. We built our system so that if a customer cancels a box that has been pre-authorised but not yet paid for, we would immediately void the pre-authorisation. This ensures we aren’t holding onto customers’ funds for any longer than is necessary.</p><hr></hr><h4 id="how-did-we-engineer-this-enter-data-bulkheading"><strong>How did we engineer this? <em>Enter: Data bulkheading.</em></strong></h4><p>As I mentioned above, once a Gousto order is ‘cut-off’, it is no longer editable by the customer and is sent to one of our factories to be packed. This happens in batches of orders at a time, so it’s extremely important that this process is fault tolerant and speedy. To this end, many Gousto applications use a <a href="https://stackoverflow.com/questions/30391809/what-is-bulkhead-pattern-used-by-hystrix" rel="noopener"><em>bulkhead</em> architecture</a>, and our shiny new pre-auth system is no exception.</p><p>The pre-auth process comprises a series of <a href="https://medium.com/gousto-engineering-techbrunch/powering-the-supply-chain-with-serverless-architecture-part-2-323932bf4424">serverless</a> functions, but we don’t want these functions to have to rely on a centralised data store to do their job. Instead, they have their own data store, which keeps a copy of all upcoming orders with payments due in the near future. Not only does this save additional functions from putting more load on a single database, but should there be a fault in another part of the system, the payments data store will be unaffected. Fun fact: the bulkhead pattern is named after the isolated sections of a ship’s hull. If the hull is pierced, only the damaged section fills with water, preventing the rest from flooding.</p><figure class="kg-card kg-image-card"></figure><p>The pre-auth system is an ideal use case for serverless functions. Demand for these services is very spiky — when a batch of orders is ‘cut off’ for example, we need a large amount of concurrency to quickly process them all. The rest of the time, we don’t see much activity, so it doesn’t make sense to pay for running servers.</p><p>For our payment functions to maintain a storage bulkhead, they need to be kept up to date with the state of orders. We utilise AWS SNS and SQS for this or — in other words — pub’ sub’. When any application within Gousto makes a change to an order, we publish to a topic. One of our payment functions is subscribed to this topic, and if the change affects the price or payment of the order, this update is added to its queue. The change is then persisted to the payments data store, ready to be processed.</p><p>After testing pre-auths on a small group of customers for a few weeks, we saw very positive results, both financially and from the feedback we received from customers! We have now rolled this out to everyone who uses Gousto.</p>
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="page-footer">
+            <amp-img class="site-icon" src="__GHOST_URL__/content/images/2021/04/apple-icon-180x180.png" width="50" height="50" layout="fixed"></amp-img>
+        <h3>Steve Barker</h3>
+            <p>Blog</p>
+        <p><a href="https://sgbarker.com/blog">Read more posts →</a></p>
+        <a class="powered" href="https://ghost.org" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 156"><g fill="none" fill-rule="evenodd"><rect fill="#15212B" width="156" height="156" rx="27"/><g transform="translate(36 36)" fill="#F6F8FA"><path d="M0 71.007A4.004 4.004 0 014 67h26a4 4 0 014 4.007v8.986A4.004 4.004 0 0130 84H4a4 4 0 01-4-4.007v-8.986zM50 71.007A4.004 4.004 0 0154 67h26a4 4 0 014 4.007v8.986A4.004 4.004 0 0180 84H54a4 4 0 01-4-4.007v-8.986z"/><rect y="34" width="84" height="17" rx="4"/><path d="M0 4.007A4.007 4.007 0 014.007 0h41.986A4.003 4.003 0 0150 4.007v8.986A4.007 4.007 0 0145.993 17H4.007A4.003 4.003 0 010 12.993V4.007z"/><rect x="67" width="17" height="17" rx="4"/></g></g></svg> Published with Ghost</a>
+    </footer>
+    
+</body>
+</html>
