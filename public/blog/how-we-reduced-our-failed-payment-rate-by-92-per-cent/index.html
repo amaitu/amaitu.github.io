@@ -8,9 +8,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./../../../../../../../assets/built/screen.css?v=066487be9a" />
+    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=066487be9a" />
 
-    <link rel="icon" href="./../../../../../../../favicon.png" type="image/png" />
+    <link rel="icon" href="./../favicon.png" type="image/png" />
     <link rel="canonical" href="https://sgbarker.com/blog/how-we-reduced-our-failed-payment-rate-by-92-per-cent/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <link rel="amphtml" href="https://sgbarker.com/blog/how-we-reduced-our-failed-payment-rate-by-92-per-cent/amp/" />
@@ -138,13 +138,13 @@
                 <section class="article-byline-content">
                     <ul class="author-list">
                         <li class="author-list-item">
-                            <a href="./../../../../../../../author/steve/" class="author-avatar">
-                                <img class="author-profile-image" src="./../../../../../../../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
+                            <a href="./../author/steve/" class="author-avatar">
+                                <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
                             </a>
                         </li>
                     </ul>
                     <div class="article-byline-meta">
-                        <h4 class="author-name"><a href="./../../../../../../../author/steve/">Steve Barker</a></h4>
+                        <h4 class="author-name"><a href="./../author/steve/">Steve Barker</a></h4>
                         <div class="byline-meta-content">
                             <time class="byline-meta-date" datetime="2020-11-16">Nov 16, 2020</time>
                             <span class="byline-reading-time"><span class="bull">&bull;</span> 4 min read</span>
@@ -155,19 +155,19 @@
 
             <figure class="article-image">
                 <img
-                    srcset="./../../../../../../../content/images/size/w300/2021/03/pre-auth-flow-1.png 300w,
-                            ./../../../../../../../content/images/size/w600/2021/03/pre-auth-flow-1.png 600w,
-                            ./../../../../../../../content/images/size/w1000/2021/03/pre-auth-flow-1.png 1000w,
-                            ./../../../../../../../content/images/size/w2000/2021/03/pre-auth-flow-1.png 2000w"
+                    srcset="./../content/images/size/w300/2021/03/pre-auth-flow-1.png 300w,
+                            ./../content/images/size/w600/2021/03/pre-auth-flow-1.png 600w,
+                            ./../content/images/size/w1000/2021/03/pre-auth-flow-1.png 1000w,
+                            ./../content/images/size/w2000/2021/03/pre-auth-flow-1.png 2000w"
                     sizes="(min-width: 1400px) 1400px, 92vw"
-                    src="./../../../../../../../content/images/size/w2000/2021/03/pre-auth-flow-1.png"
+                    src="./../content/images/size/w2000/2021/03/pre-auth-flow-1.png"
                     alt="How we reduced our failed payment rate by 92%"
                 />
             </figure>
         </header>
 
         <section class="gh-content gh-canvas">
-            <p><em>Originally posted on <a href="https://medium.com/gousto-engineering-techbrunch">Gousto Engineering &amp; Data</a></em></p><p>Most Gousto customers choose to get their <a href="https://www.gousto.co.uk/" rel="noopener">recipe boxes</a> on a subscription basis: every week they choose their recipes from our menu, and we pick, pack and deliver them to their door. To give customers as much flexibility as possible, we let customers edit their box right up until it’s sent to one of our factories for picking.</p><figure class="kg-card kg-image-card kg-width-wide"><img src="./../../../../../../..//content/images/2021/03/box-flow.png" class="kg-image" alt loading="lazy" width="1268" height="526" srcset="https://sgbarker.com/blog/content/images/size/w600/2021/03/box-flow.png 600w, https://sgbarker.com/blog/content/images/size/w1000/2021/03/box-flow.png 1000w, https://sgbarker.com/blog/content/images/2021/03/box-flow.png 1268w" sizes="(min-width: 1200px) 1200px"></figure><h4 id="this-process-works-really-well-most-of-the-time-but-what-happens-when-a-customer%E2%80%99s-payment-fails">This process works really well most of the time. But what happens when a customer’s payment fails?</h4><p>It’s natural that a proportion of payments will fail — customers’ cards have changed, or there aren’t enough funds in the account. At Gousto we had a natural failed payment rate of around 2% for existing customers.</p><p>Until recently we only had two ways of handling a failed payment. First, we could send out the box anyway and put a debit on the customer’s account. Alternatively, we could just cancel the customer’s order.</p><p>Neither of these is a good solution. We never want to have to cancel a customer’s box, nor do we want to put a customer into ‘debt’. The majority of failed payments are because a customer has forgotten to update their card details and are still expecting to receive their order. I’m sure you can imagine how frustrating it might be to lose your food delivery for the week just because your debit card expired.</p><h4 id="how-did-we-reduce-failed-payments">How did we reduce failed payments?</h4><p>We decided to request a ‘dry run’ payment 24 hours before the actual payment is due — this is known as a <em>pre-authorisation. </em>Pre-auths allow merchants like Gousto to ‘reserve’ some amount of money against a customer’s payment method, without actually charging them. When we attempt to reserve these funds, we’ll receive a success or failure response from the customer’s bank. If unsuccessful, we can ask the customer to update their payment details.</p><figure class="kg-card kg-image-card kg-width-wide"><img src="./../../../../../../..//content/images/2021/03/pre-auth-flow.png" class="kg-image" alt loading="lazy" width="1696" height="648" srcset="https://sgbarker.com/blog/content/images/size/w600/2021/03/pre-auth-flow.png 600w, https://sgbarker.com/blog/content/images/size/w1000/2021/03/pre-auth-flow.png 1000w, https://sgbarker.com/blog/content/images/size/w1600/2021/03/pre-auth-flow.png 1600w, https://sgbarker.com/blog/content/images/2021/03/pre-auth-flow.png 1696w" sizes="(min-width: 1200px) 1200px"></figure><p>As you can see, pre-auths allow us to catch a failed payment. We then email customers and give them 24 hours to update their card details in time for the final payment. This alone reduced our failed payment rate by 92%!</p><p>Many customers will receive a notification from their bank when the pre-auth is requested, which serves as an extra reminder of their upcoming box, with time for them to update their recipes before it’s dispatched. If the customer no longer wishes to receive their order, they also have the opportunity to cancel it through the app before it’s already paid for and dispatched. This reduces wasteful unintentional orders.</p><h4 id="how-do-pre-auths-actually-work">How do pre-auths actually work?</h4><p>When a merchant <a href="https://www.paymill.com/en/glossary/card-pre-authorisation/" rel="noopener">pre-authorises</a> funds on an account, it doesn’t have access to those funds yet; they’re ring-fenced for that merchant to use at some future point in time and the customer can’t use those funds for anything else.</p><p>If the merchant doesn’t end up charging the customer, the funds are released back to the customer by their bank after a period of time, typically five days. We built our system so that if a customer cancels a box that has been pre-authorised but not yet paid for, we would immediately void the pre-authorisation. This ensures we aren’t holding onto customers’ funds for any longer than is necessary.</p><hr><h4 id="how-did-we-engineer-this-enter-data-bulkheading"><strong>How did we engineer this? <em>Enter: Data bulkheading.</em></strong></h4><p>As I mentioned above, once a Gousto order is ‘cut-off’, it is no longer editable by the customer and is sent to one of our factories to be packed. This happens in batches of orders at a time, so it’s extremely important that this process is fault tolerant and speedy. To this end, many Gousto applications use a <a href="https://stackoverflow.com/questions/30391809/what-is-bulkhead-pattern-used-by-hystrix" rel="noopener"><em>bulkhead</em> architecture</a>, and our shiny new pre-auth system is no exception.</p><p>The pre-auth process comprises a series of <a href="https://medium.com/gousto-engineering-techbrunch/powering-the-supply-chain-with-serverless-architecture-part-2-323932bf4424">serverless</a> functions, but we don’t want these functions to have to rely on a centralised data store to do their job. Instead, they have their own data store, which keeps a copy of all upcoming orders with payments due in the near future. Not only does this save additional functions from putting more load on a single database, but should there be a fault in another part of the system, the payments data store will be unaffected. Fun fact: the bulkhead pattern is named after the isolated sections of a ship’s hull. If the hull is pierced, only the damaged section fills with water, preventing the rest from flooding.</p><figure class="kg-card kg-image-card"><img src="./../../../../../../..//content/images/2021/03/container-ship.png" class="kg-image" alt loading="lazy" width="1172" height="806" srcset="https://sgbarker.com/blog/content/images/size/w600/2021/03/container-ship.png 600w, https://sgbarker.com/blog/content/images/size/w1000/2021/03/container-ship.png 1000w, https://sgbarker.com/blog/content/images/2021/03/container-ship.png 1172w" sizes="(min-width: 720px) 720px"></figure><p>The pre-auth system is an ideal use case for serverless functions. Demand for these services is very spiky — when a batch of orders is ‘cut off’ for example, we need a large amount of concurrency to quickly process them all. The rest of the time, we don’t see much activity, so it doesn’t make sense to pay for running servers.</p><p>For our payment functions to maintain a storage bulkhead, they need to be kept up to date with the state of orders. We utilise AWS SNS and SQS for this or — in other words — pub’ sub’. When any application within Gousto makes a change to an order, we publish to a topic. One of our payment functions is subscribed to this topic, and if the change affects the price or payment of the order, this update is added to its queue. The change is then persisted to the payments data store, ready to be processed.</p><p>After testing pre-auths on a small group of customers for a few weeks, we saw very positive results, both financially and from the feedback we received from customers! We have now rolled this out to everyone who uses Gousto.</p>
+            <p><em>Originally posted on <a href="https://medium.com/gousto-engineering-techbrunch">Gousto Engineering &amp; Data</a></em></p><p>Most Gousto customers choose to get their <a href="https://www.gousto.co.uk/" rel="noopener">recipe boxes</a> on a subscription basis: every week they choose their recipes from our menu, and we pick, pack and deliver them to their door. To give customers as much flexibility as possible, we let customers edit their box right up until it’s sent to one of our factories for picking.</p><figure class="kg-card kg-image-card kg-width-wide"><img src="./..//content/images/2021/03/box-flow.png" class="kg-image" alt loading="lazy" width="1268" height="526" srcset="https://sgbarker.com/blog/content/images/size/w600/2021/03/box-flow.png 600w, https://sgbarker.com/blog/content/images/size/w1000/2021/03/box-flow.png 1000w, https://sgbarker.com/blog/content/images/2021/03/box-flow.png 1268w" sizes="(min-width: 1200px) 1200px"></figure><h4 id="this-process-works-really-well-most-of-the-time-but-what-happens-when-a-customer%E2%80%99s-payment-fails">This process works really well most of the time. But what happens when a customer’s payment fails?</h4><p>It’s natural that a proportion of payments will fail — customers’ cards have changed, or there aren’t enough funds in the account. At Gousto we had a natural failed payment rate of around 2% for existing customers.</p><p>Until recently we only had two ways of handling a failed payment. First, we could send out the box anyway and put a debit on the customer’s account. Alternatively, we could just cancel the customer’s order.</p><p>Neither of these is a good solution. We never want to have to cancel a customer’s box, nor do we want to put a customer into ‘debt’. The majority of failed payments are because a customer has forgotten to update their card details and are still expecting to receive their order. I’m sure you can imagine how frustrating it might be to lose your food delivery for the week just because your debit card expired.</p><h4 id="how-did-we-reduce-failed-payments">How did we reduce failed payments?</h4><p>We decided to request a ‘dry run’ payment 24 hours before the actual payment is due — this is known as a <em>pre-authorisation. </em>Pre-auths allow merchants like Gousto to ‘reserve’ some amount of money against a customer’s payment method, without actually charging them. When we attempt to reserve these funds, we’ll receive a success or failure response from the customer’s bank. If unsuccessful, we can ask the customer to update their payment details.</p><figure class="kg-card kg-image-card kg-width-wide"><img src="./..//content/images/2021/03/pre-auth-flow.png" class="kg-image" alt loading="lazy" width="1696" height="648" srcset="https://sgbarker.com/blog/content/images/size/w600/2021/03/pre-auth-flow.png 600w, https://sgbarker.com/blog/content/images/size/w1000/2021/03/pre-auth-flow.png 1000w, https://sgbarker.com/blog/content/images/size/w1600/2021/03/pre-auth-flow.png 1600w, https://sgbarker.com/blog/content/images/2021/03/pre-auth-flow.png 1696w" sizes="(min-width: 1200px) 1200px"></figure><p>As you can see, pre-auths allow us to catch a failed payment. We then email customers and give them 24 hours to update their card details in time for the final payment. This alone reduced our failed payment rate by 92%!</p><p>Many customers will receive a notification from their bank when the pre-auth is requested, which serves as an extra reminder of their upcoming box, with time for them to update their recipes before it’s dispatched. If the customer no longer wishes to receive their order, they also have the opportunity to cancel it through the app before it’s already paid for and dispatched. This reduces wasteful unintentional orders.</p><h4 id="how-do-pre-auths-actually-work">How do pre-auths actually work?</h4><p>When a merchant <a href="https://www.paymill.com/en/glossary/card-pre-authorisation/" rel="noopener">pre-authorises</a> funds on an account, it doesn’t have access to those funds yet; they’re ring-fenced for that merchant to use at some future point in time and the customer can’t use those funds for anything else.</p><p>If the merchant doesn’t end up charging the customer, the funds are released back to the customer by their bank after a period of time, typically five days. We built our system so that if a customer cancels a box that has been pre-authorised but not yet paid for, we would immediately void the pre-authorisation. This ensures we aren’t holding onto customers’ funds for any longer than is necessary.</p><hr><h4 id="how-did-we-engineer-this-enter-data-bulkheading"><strong>How did we engineer this? <em>Enter: Data bulkheading.</em></strong></h4><p>As I mentioned above, once a Gousto order is ‘cut-off’, it is no longer editable by the customer and is sent to one of our factories to be packed. This happens in batches of orders at a time, so it’s extremely important that this process is fault tolerant and speedy. To this end, many Gousto applications use a <a href="https://stackoverflow.com/questions/30391809/what-is-bulkhead-pattern-used-by-hystrix" rel="noopener"><em>bulkhead</em> architecture</a>, and our shiny new pre-auth system is no exception.</p><p>The pre-auth process comprises a series of <a href="https://medium.com/gousto-engineering-techbrunch/powering-the-supply-chain-with-serverless-architecture-part-2-323932bf4424">serverless</a> functions, but we don’t want these functions to have to rely on a centralised data store to do their job. Instead, they have their own data store, which keeps a copy of all upcoming orders with payments due in the near future. Not only does this save additional functions from putting more load on a single database, but should there be a fault in another part of the system, the payments data store will be unaffected. Fun fact: the bulkhead pattern is named after the isolated sections of a ship’s hull. If the hull is pierced, only the damaged section fills with water, preventing the rest from flooding.</p><figure class="kg-card kg-image-card"><img src="./..//content/images/2021/03/container-ship.png" class="kg-image" alt loading="lazy" width="1172" height="806" srcset="https://sgbarker.com/blog/content/images/size/w600/2021/03/container-ship.png 600w, https://sgbarker.com/blog/content/images/size/w1000/2021/03/container-ship.png 1000w, https://sgbarker.com/blog/content/images/2021/03/container-ship.png 1172w" sizes="(min-width: 720px) 720px"></figure><p>The pre-auth system is an ideal use case for serverless functions. Demand for these services is very spiky — when a batch of orders is ‘cut off’ for example, we need a large amount of concurrency to quickly process them all. The rest of the time, we don’t see much activity, so it doesn’t make sense to pay for running servers.</p><p>For our payment functions to maintain a storage bulkhead, they need to be kept up to date with the state of orders. We utilise AWS SNS and SQS for this or — in other words — pub’ sub’. When any application within Gousto makes a change to an order, we publish to a topic. One of our payment functions is subscribed to this topic, and if the change affects the price or payment of the order, this update is added to its queue. The change is then persisted to the payments data store, ready to be processed.</p><p>After testing pre-auths on a small group of customers for a few weeks, we saw very positive results, both financially and from the feedback we received from customers! We have now rolled this out to everyone who uses Gousto.</p>
         </section>
 
 
@@ -192,14 +192,14 @@
                     
 <article class="post-card post ">
 
-    <a class="post-card-image-link" href="./../../../../../../../how-to-host-scalable-ghost-publication-for-free/">
+    <a class="post-card-image-link" href="./../how-to-host-scalable-ghost-publication-for-free/">
         <img class="post-card-image"
-            srcset="./../../../../../../../content/images/size/w300/2021/09/Screenshot-2021-09-30-at-10.33.39.png 300w,
-                    ./../../../../../../../content/images/size/w600/2021/09/Screenshot-2021-09-30-at-10.33.39.png 600w,
-                    ./../../../../../../../content/images/size/w1000/2021/09/Screenshot-2021-09-30-at-10.33.39.png 1000w,
-                    ./../../../../../../../content/images/size/w2000/2021/09/Screenshot-2021-09-30-at-10.33.39.png 2000w"
+            srcset="./../content/images/size/w300/2021/09/Screenshot-2021-09-30-at-10.33.39.png 300w,
+                    ./../content/images/size/w600/2021/09/Screenshot-2021-09-30-at-10.33.39.png 600w,
+                    ./../content/images/size/w1000/2021/09/Screenshot-2021-09-30-at-10.33.39.png 1000w,
+                    ./../content/images/size/w2000/2021/09/Screenshot-2021-09-30-at-10.33.39.png 2000w"
             sizes="(max-width: 1000px) 400px, 800px"
-            src="./../../../../../../../content/images/size/w600/2021/09/Screenshot-2021-09-30-at-10.33.39.png"
+            src="./../content/images/size/w600/2021/09/Screenshot-2021-09-30-at-10.33.39.png"
             alt="How to host a highly scalable ghost publication for free"
             loading="lazy"
         />
@@ -207,7 +207,7 @@
 
     <div class="post-card-content">
 
-        <a class="post-card-content-link" href="./../../../../../../../how-to-host-scalable-ghost-publication-for-free/">
+        <a class="post-card-content-link" href="./../how-to-host-scalable-ghost-publication-for-free/">
             <header class="post-card-header">
                 <h2 class="post-card-title">How to host a highly scalable ghost publication for free</h2>
             </header>
@@ -219,13 +219,13 @@
         <footer class="post-card-meta">
             <ul class="author-list">
                 <li class="author-list-item">
-                    <a href="./../../../../../../../author/steve/" class="static-avatar">
-                        <img class="author-profile-image" src="./../../../../../../../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
+                    <a href="./../author/steve/" class="static-avatar">
+                        <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
                     </a>
                 </li>
             </ul>
             <div class="post-card-byline-content">
-                <span><a href="./../../../../../../../author/steve/">Steve Barker</a></span>
+                <span><a href="./../author/steve/">Steve Barker</a></span>
                 <span class="post-card-byline-date"><time datetime="2021-09-30">Sep 30, 2021</time> <span class="bull">&bull;</span> 5 min read</span>
             </div>
         </footer>
@@ -236,14 +236,14 @@
                     
 <article class="post-card post ">
 
-    <a class="post-card-image-link" href="./../../../../../../../photos-of-north-korea/">
+    <a class="post-card-image-link" href="./../photos-of-north-korea/">
         <img class="post-card-image"
-            srcset="./../../../../../../../content/images/size/w300/2021/09/North-Korea-1-2.jpg 300w,
-                    ./../../../../../../../content/images/size/w600/2021/09/North-Korea-1-2.jpg 600w,
-                    ./../../../../../../../content/images/size/w1000/2021/09/North-Korea-1-2.jpg 1000w,
-                    ./../../../../../../../content/images/size/w2000/2021/09/North-Korea-1-2.jpg 2000w"
+            srcset="./../content/images/size/w300/2021/09/North-Korea-1-2.jpg 300w,
+                    ./../content/images/size/w600/2021/09/North-Korea-1-2.jpg 600w,
+                    ./../content/images/size/w1000/2021/09/North-Korea-1-2.jpg 1000w,
+                    ./../content/images/size/w2000/2021/09/North-Korea-1-2.jpg 2000w"
             sizes="(max-width: 1000px) 400px, 800px"
-            src="./../../../../../../../content/images/size/w600/2021/09/North-Korea-1-2.jpg"
+            src="./../content/images/size/w600/2021/09/North-Korea-1-2.jpg"
             alt="Photos of North Korea"
             loading="lazy"
         />
@@ -251,7 +251,7 @@
 
     <div class="post-card-content">
 
-        <a class="post-card-content-link" href="./../../../../../../../photos-of-north-korea/">
+        <a class="post-card-content-link" href="./../photos-of-north-korea/">
             <header class="post-card-header">
                 <h2 class="post-card-title">Photos of North Korea</h2>
             </header>
@@ -263,13 +263,13 @@
         <footer class="post-card-meta">
             <ul class="author-list">
                 <li class="author-list-item">
-                    <a href="./../../../../../../../author/steve/" class="static-avatar">
-                        <img class="author-profile-image" src="./../../../../../../../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
+                    <a href="./../author/steve/" class="static-avatar">
+                        <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
                     </a>
                 </li>
             </ul>
             <div class="post-card-byline-content">
-                <span><a href="./../../../../../../../author/steve/">Steve Barker</a></span>
+                <span><a href="./../author/steve/">Steve Barker</a></span>
                 <span class="post-card-byline-date"><time datetime="2021-07-28">Jul 28, 2021</time> <span class="bull">&bull;</span> 3 min read</span>
             </div>
         </footer>
@@ -280,14 +280,14 @@
                     
 <article class="post-card post ">
 
-    <a class="post-card-image-link" href="./../../../../../../../my-ideal-fudge-recipe/">
+    <a class="post-card-image-link" href="./../my-ideal-fudge-recipe/">
         <img class="post-card-image"
-            srcset="./../../../../../../../content/images/size/w300/2020/12/12---Baking-3-1.jpg 300w,
-                    ./../../../../../../../content/images/size/w600/2020/12/12---Baking-3-1.jpg 600w,
-                    ./../../../../../../../content/images/size/w1000/2020/12/12---Baking-3-1.jpg 1000w,
-                    ./../../../../../../../content/images/size/w2000/2020/12/12---Baking-3-1.jpg 2000w"
+            srcset="./../content/images/size/w300/2020/12/12---Baking-3-1.jpg 300w,
+                    ./../content/images/size/w600/2020/12/12---Baking-3-1.jpg 600w,
+                    ./../content/images/size/w1000/2020/12/12---Baking-3-1.jpg 1000w,
+                    ./../content/images/size/w2000/2020/12/12---Baking-3-1.jpg 2000w"
             sizes="(max-width: 1000px) 400px, 800px"
-            src="./../../../../../../../content/images/size/w600/2020/12/12---Baking-3-1.jpg"
+            src="./../content/images/size/w600/2020/12/12---Baking-3-1.jpg"
             alt="My Ideal Fudge Recipe"
             loading="lazy"
         />
@@ -295,7 +295,7 @@
 
     <div class="post-card-content">
 
-        <a class="post-card-content-link" href="./../../../../../../../my-ideal-fudge-recipe/">
+        <a class="post-card-content-link" href="./../my-ideal-fudge-recipe/">
             <header class="post-card-header">
                 <h2 class="post-card-title">My Ideal Fudge Recipe</h2>
             </header>
@@ -307,13 +307,13 @@
         <footer class="post-card-meta">
             <ul class="author-list">
                 <li class="author-list-item">
-                    <a href="./../../../../../../../author/steve/" class="static-avatar">
-                        <img class="author-profile-image" src="./../../../../../../../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
+                    <a href="./../author/steve/" class="static-avatar">
+                        <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
                     </a>
                 </li>
             </ul>
             <div class="post-card-byline-content">
-                <span><a href="./../../../../../../../author/steve/">Steve Barker</a></span>
+                <span><a href="./../author/steve/">Steve Barker</a></span>
                 <span class="post-card-byline-date"><time datetime="2020-12-19">Dec 19, 2020</time> <span class="bull">&bull;</span> 3 min read</span>
             </div>
         </footer>
@@ -350,7 +350,7 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
 </script>
-<script src="./../../../../../../../assets/built/casper.js?v=066487be9a"></script>
+<script src="./../assets/built/casper.js?v=066487be9a"></script>
 <script>
 $(document).ready(function () {
     // Mobile Menu Trigger
