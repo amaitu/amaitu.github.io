@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="auto-color">
 <head>
 
     <title>How to host a highly scalable ghost publication for free</title>
@@ -8,9 +8,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=0b77b853a1" />
+    <link rel="stylesheet" type="text/css" href="./../assets/built/screen.css?v=b603508097" />
 
-    <link rel="icon" href="./../favicon.png" type="image/png" />
+    <link rel="icon" href="https://sgbarker.com/blog/content/images/size/w256h256/2021/04/apple-icon-180x180.png" type="image/png" />
     <link rel="canonical" href="https://sgbarker.com/blog/how-to-host-scalable-ghost-publication-for-free/" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
     <link rel="amphtml" href="https://sgbarker.com/blog/how-to-host-scalable-ghost-publication-for-free/amp/" />
@@ -18,7 +18,14 @@
     <meta property="og:site_name" content="Steve Barker" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="How to host a highly scalable ghost publication for free" />
-    <meta property="og:description" content="TL;DR: Spin up a local container running Ghost, crawl the frontend to generate a static site, and upload to a free static host. While there&#x27;s quite a few options for statically hosting written content for free, most of these involve using markdown as your writing interface. While this is" />
+    <meta property="og:description" content="TL;DR: Spin up a local container running Ghost, crawl the frontend to generate a
+static site, and upload to a free static host.
+
+
+--------------------------------------------------------------------------------
+
+While there&#x27;s quite a few options for statically hosting written content for
+free, most of these involve using markdown as your writing interface. While this" />
     <meta property="og:url" content="https://sgbarker.com/blog/how-to-host-scalable-ghost-publication-for-free/" />
     <meta property="og:image" content="https://sgbarker.com/blog/content/images/2021/09/Screenshot-2021-09-30-at-10.33.39.png" />
     <meta property="article:published_time" content="2021-09-30T09:20:28.000Z" />
@@ -27,7 +34,14 @@
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="How to host a highly scalable ghost publication for free" />
-    <meta name="twitter:description" content="TL;DR: Spin up a local container running Ghost, crawl the frontend to generate a static site, and upload to a free static host. While there&#x27;s quite a few options for statically hosting written content for free, most of these involve using markdown as your writing interface. While this is" />
+    <meta name="twitter:description" content="TL;DR: Spin up a local container running Ghost, crawl the frontend to generate a
+static site, and upload to a free static host.
+
+
+--------------------------------------------------------------------------------
+
+While there&#x27;s quite a few options for statically hosting written content for
+free, most of these involve using markdown as your writing interface. While this" />
     <meta name="twitter:url" content="https://sgbarker.com/blog/how-to-host-scalable-ghost-publication-for-free/" />
     <meta name="twitter:image" content="https://sgbarker.com/blog/content/images/2021/09/Screenshot-2021-09-30-at-10.33.39.png" />
     <meta name="twitter:label1" content="Written by" />
@@ -47,7 +61,9 @@
         "url": "https://sgbarker.com/blog/",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://sgbarker.com/blog/favicon.png"
+            "url": "https://sgbarker.com/blog/content/images/size/w256h256/2021/04/apple-icon-180x180.png",
+            "width": 60,
+            "height": 60
         }
     },
     "author": {
@@ -80,19 +96,22 @@
     }
 }
     </script>
-<style>:root {--ghost-accent-color: #000000;}</style>
-    <meta name="generator" content="Ghost 4.16" />
+
+    <meta name="generator" content="Ghost 5.2" />
     <link rel="alternate" type="application/rss+xml" title="Steve Barker" href="https://sgbarker.com/blog/rss/" />
+    
+    <script defer src="./../public/cards.min.js?v=b603508097"></script><style>:root {--ghost-accent-color: #000000;}</style>
+    <link rel="stylesheet" type="text/css" href="./../public/cards.min.css?v=b603508097">
 
 </head>
-<body class="post-template tag-software-engineering">
+<body class="post-template tag-software-engineering has-cover">
 <div class="viewport">
 
-    <header id="gh-head" class="gh-head ">
-        <nav class="gh-head-inner inner gh-container">
+    <header id="gh-head" class="gh-head outer">
+        <nav class="gh-head-inner inner">
 
             <div class="gh-head-brand">
-                <a class="gh-head-logo" href="https://sgbarker.com/blog">
+                <a class="gh-head-logo no-image" href="https://sgbarker.com/blog">
                         Steve Barker
                 </a>
                 <a class="gh-burger" role="button">
@@ -111,7 +130,6 @@
             <div class="gh-head-actions">
                 <div class="gh-social">
                 </div>
-
             </div>
         </nav>
     </header>
@@ -122,35 +140,40 @@
 
 
 <main id="site-main" class="site-main">
-    <article class="article post tag-software-engineering">
+<article class="article post tag-software-engineering ">
 
-        <header class="article-header gh-canvas">
+    <header class="article-header gh-canvas">
 
-            <section class="article-tag">
-                <a href="https://sgbarker.com/blog/tag/software-engineering/">Software Engineering</a>
-            </section>
+        <div class="article-tag post-card-tags">
+                <span class="post-card-primary-tag">
+                    <a href="./../tag/software-engineering/">Software Engineering</a>
+                </span>
+        </div>
 
-            <h1 class="article-title">How to host a highly scalable ghost publication for free</h1>
+        <h1 class="article-title">How to host a highly scalable ghost publication for free</h1>
 
 
-            <div class="article-byline">
-                <section class="article-byline-content">
-                    <ul class="author-list">
-                        <li class="author-list-item">
-                            <a href="./../author/steve/" class="author-avatar">
-                                <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="article-byline-meta">
-                        <h4 class="author-name"><a href="./../author/steve/">Steve Barker</a></h4>
-                        <div class="byline-meta-content">
-                            <time class="byline-meta-date" datetime="2021-09-30">Sep 30, 2021</time>
-                            <span class="byline-reading-time"><span class="bull">&bull;</span> 5 min read</span>
-                        </div>
-                    </div>
-                </section>
+        <div class="article-byline">
+        <section class="article-byline-content">
+
+            <ul class="author-list">
+                <li class="author-list-item">
+                    <a href="./../author/steve/" class="author-avatar">
+                        <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
+                    </a>
+                </li>
+            </ul>
+
+            <div class="article-byline-meta">
+                <h4 class="author-name"><a href="./../author/steve/">Steve Barker</a></h4>
+                <div class="byline-meta-content">
+                    <time class="byline-meta-date" datetime="2021-09-30">Sep 30, 2021</time>
+                        <span class="byline-reading-time"><span class="bull">&bull;</span> 5 min read</span>
+                </div>
             </div>
+
+        </section>
+        </div>
 
             <figure class="article-image">
                 <img
@@ -163,26 +186,68 @@
                     alt="How to host a highly scalable ghost publication for free"
                 />
             </figure>
-        </header>
 
-        <section class="gh-content gh-canvas">
-            <p>TL;DR: Spin up a local container running Ghost, crawl the frontend to generate a static site, and upload to a free static host.</p><hr><p>While there's quite a few options for statically hosting written content for free, most of these involve using markdown as your writing interface. While this is fine<em>, </em>I'd prefer the block-based rich editor offered by <a href="https://sgbarker.com/blog/why-ghost/">Ghost</a>.</p><p><a href="https://sgbarker.com/blog/why-ghost/">Ghost Pro's pricing</a> is quite reasonable and a good option if you want to take advantage of all that Ghost has to offer. But if you just want a personal site without members, I've found the best option is to run Ghost locally, and upload the rendered pages to a free static web hosting service. This tutorial will show you how.</p><h3 id="limitations">Limitations</h3><p><strong>[Skip this part if you don't care about the limitations and just want to get to the tutorial].</strong></p><p>It's important to understand a little about how Ghost works. The backend keeps state in a SQL datbase, and is accessed by a JSON API. Assets, such as images, <a href="https://ghost.org/themes/">themes</a> or logs are kept in 'storage', which can be on the filesystem of the server, in an S3-like object storage service, or in a container volume/mount. The other part of Ghost is the frontend, which out of the box is a theming system that uses handlebars.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a href="https://ghost.org/docs/architecture/"><img src="./..//content/images/2021/09/ghost-architecture.png" class="kg-image" alt loading="lazy" width="1000" height="889"></a><figcaption>Ghost architecture</figcaption></figure><p>Generating static HTML files from your locally running Ghost instance works for quite a few use cases, but clearly not for anything dynamic. For instance readers won't be able to sign up to your newsletter, as there won't be any server to handle the request. The following features won't work:</p><ul><li>Newsletters;</li><li>Memberships;</li><li>Post embargos;</li><li>Easy collaboration with others;</li><li>Anything else that requires clients to make a request other than for HTML/CSS. </li></ul><hr><h2 id="tutorial">Tutorial</h2><h3 id="how-to-run-ghost-locally">How to run Ghost locally</h3><p>I run my Ghost instance using Docker, which means it's easy to update and is isolated from my OS.</p><p>If you haven't got it already, you'll need to <a href="https://docs.docker.com/get-docker/">install Docker</a>.</p><p>To pull down the latest Ghost image, run <code>docker pull ghost</code></p><p>You'll now need to set up a folder where you can keep your Ghost content, this is things like images, themes, and your SQLite database. For instance: <code>/Users/steve/stuff/ghost-content</code> </p><p>Now, to run the Ghost container, execute the following, but substitute <code>my-blog</code> with whatever you want to call your container (doesn't really matter what), and <code>/Users/steve/stuff/ghost-content</code> with the location of your content folder that you created in the previous step.</p><pre><code class="language-bash">docker run -d --name my-blog -e url=http://localhost:3002 -p 3002:2368 -v '/Users/steve/stuff/ghost-content':/var/lib/ghost/content ghost</code></pre><p>You should find that Ghost has populated your content folder with stuff:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./..//content/images/2021/09/Screenshot-2021-09-29-at-22.10.11.png" class="kg-image" alt loading="lazy" width="882" height="110"><figcaption>What your content folder should look like now</figcaption></figure><p>Now, if you head to <a href="http://localhost:3002/">http://localhost:3002</a>, you should see that your publication is running! (You may need to wait ~1 minute if the container is still spinning up).</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./..//content/images/2021/09/Screenshot-2021-09-29-at-22.12.36.png" class="kg-image" alt loading="lazy" width="3840" height="2160"><figcaption>A fresh Ghost install</figcaption></figure><p>If you head to <a href="http://localhost:3002/ghost">http://localhost:3002/ghost</a>, this will display the admin page where you can set up your publication.</p><h3 id="generating-the-static-site">Generating the static site</h3><p>Now that you have Ghost running on your machine, you'll need to crawl the site to fetch the HTML files. For this I'd reccommend <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">Mr Mo's Ghost Static Site Generator</a>, (GSSG) which usefully does this job for us. Thanks Mr Mo.</p><p>Follow the instructions on <a href="https://github.com/Fried-Chicken/ghost-static-site-generator#readme">the GSSG readme</a> to install it.</p><p>Next, you'll need to create a folder that you want to store your static site in. Let's call it <code>/Users/steve/stuff/ghost-static</code> for now.</p><p>From your <code>ghost-static</code> folder, run the following command. You'll need to change the <code>--dest</code> to path of the folder you just created, and the <code>--url</code> from <code>yourdomain.com</code> to the actual domain you intend on hosting the site at:</p><pre><code>gssg --domain http://localhost:3002 --dest '/Users/steve/stuff/ghost-static' --url https://yourdomain.com</code></pre><p>You should now see GSSG fetching a load of files and putting them in your static directory.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./..//content/images/2021/09/Screenshot-2021-09-30-at-09.52.57.png" class="kg-image" alt loading="lazy" width="1434" height="1470"><figcaption>This can take a few minutes</figcaption></figure><h3 id="uploading-to-the-internet">Uploading to the internet</h3><p>You'll need some kind of static hosting service. I think <a href="https://pages.cloudflare.com/">Cloudflare Pages</a> offers the best performance, ease of use and price, so I'll be using that. It's free for unlimited requests, bandwidth and sites, up to 500 builds per month ATTOW. You could also use something like GitHub Pages or Netlify.</p><p>Create a GitHub repo for your static site, then upload the contents of your static folder - by now this should contain an <code>index.html</code>, some <code>xml</code> files, and possibly a number of folders, depending on how much content you have.</p><h3 id="%E2%80%8Bsign-in-to-cloudflare-pages"><a href="https://developers.cloudflare.com/pages/get-started#sign-in-to-cloudflare-pages">​</a>Sign in to Cloudflare Pages</h3><p>Go to the <a href="https://pages.dev">Cloudflare Pages site</a>, and sign in with your Cloudflare account. If you do not have an account yet, you can sign up as you go.</p><h3 id="%E2%80%8Bconnect-to-github"><a href="https://developers.cloudflare.com/pages/get-started#connect-to-github">​</a>Connect to GitHub</h3><p>Signing in with GitHub allows <a href="https://pages.dev">Cloudflare Pages</a> to deploy your projects, update your GitHub PRs with <a href="https://developers.cloudflare.com/pages/platform/preview-deployments">preview deployments</a>, and more. After you sign in, select <strong>Create a project</strong> in the Pages dashboard.</p><p>You'll then need to point Cloudflare Pages to the GitHub repo containing your static site, after which you can configure some settings such as which directory it should point at. If you've followed this tutorial closely, your static site should be stored in the root of the repo.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./..//content/images/2021/09/Cloudflare-Pages-Configuration.png" class="kg-image" alt loading="lazy" width="984" height="349"><figcaption>Configuring Cloudflare Pages for static Ghost hosting</figcaption></figure><p>Once the first deployment has finished, you can also set up your own domain name.</p><p>That's it! You now have your writing hosted on one of the world's fastest content delivery networks, that can handle a virtually "unlimited" amount of traffic, for free.</p><h2 id="going-further-and-optimising">Going further and optimising</h2><h3 id="backups">Backups</h3><p>If you ever want to spin up your local Ghost container, it's as simple as executing the <code>docker run</code> command from the start. However if you lose your content folder, then you'll lose all your posts and your ability to run your publication locally, so I strongly recommend you back it up.</p><h3 id="turning-off-dynamic-features">Turning off dynamic features</h3><p>As dynamic features of Ghost won't work for your users, I recommend turning as many of them off as possible. From the Ghost settings, you can head to memberships to turn off subscription access.</p><figure class="kg-card kg-image-card"><img src="./..//content/images/2021/09/Screenshot-2021-09-29-at-18.35.39.png" class="kg-image" alt loading="lazy" width="1508" height="746"></figure><p>You can also pick a theme that optimises for content delivery, rather than for more dynamic features of Ghost.</p><h3 id="deleting-posts">Deleting posts</h3><p>One small 'gotcha' is that if a post is deleted or renamed, the original will stay in your static folder. To get around this, ensure you periodically purge your static folder before regenerating it.</p><h3 id="database">Database</h3><p>The database used by the official Docker image is SQLite, which is fine for our use case. The database will live in your content-folder/data, so you can easily make changes to the data or back it up.</p><hr><p>I hope you find this useful. Note, this is very much a <em>beta </em>workflow, so be wary of bugs.</p>
-        </section>
+    </header>
+
+    <section class="gh-content gh-canvas">
+        <p>TL;DR: Spin up a local container running Ghost, crawl the frontend to generate a static site, and upload to a free static host.</p><hr><p>While there's quite a few options for statically hosting written content for free, most of these involve using markdown as your writing interface. While this is fine<em>, </em>I'd prefer the block-based rich editor offered by <a href="https://sgbarker.com/blog/why-ghost/">Ghost</a>.</p><p><a href="https://sgbarker.com/blog/why-ghost/">Ghost Pro's pricing</a> is quite reasonable and a good option if you want to take advantage of all that Ghost has to offer. But if you just want a personal site without members, I've found the best option is to run Ghost locally, and upload the rendered pages to a free static web hosting service. This tutorial will show you how.</p><h3 id="limitations">Limitations</h3><p><strong>[Skip this part if you don't care about the limitations and just want to get to the tutorial].</strong></p><p>It's important to understand a little about how Ghost works. The backend keeps state in a SQL datbase, and is accessed by a JSON API. Assets, such as images, <a href="https://ghost.org/themes/">themes</a> or logs are kept in 'storage', which can be on the filesystem of the server, in an S3-like object storage service, or in a container volume/mount. The other part of Ghost is the frontend, which out of the box is a theming system that uses handlebars.</p><figure class="kg-card kg-image-card kg-card-hascaption"><a href="https://ghost.org/docs/architecture/"><img src="./../content/images/2021/09/ghost-architecture.png" class="kg-image" alt loading="lazy" width="1000" height="889"></a><figcaption>Ghost architecture</figcaption></figure><p>Generating static HTML files from your locally running Ghost instance works for quite a few use cases, but clearly not for anything dynamic. For instance readers won't be able to sign up to your newsletter, as there won't be any server to handle the request. The following features won't work:</p><ul><li>Newsletters;</li><li>Memberships;</li><li>Post embargos;</li><li>Easy collaboration with others;</li><li>Anything else that requires clients to make a request other than for HTML/CSS. </li></ul><hr><h2 id="tutorial">Tutorial</h2><h3 id="how-to-run-ghost-locally">How to run Ghost locally</h3><p>I run my Ghost instance using Docker, which means it's easy to update and is isolated from my OS.</p><p>If you haven't got it already, you'll need to <a href="https://docs.docker.com/get-docker/">install Docker</a>.</p><p>To pull down the latest Ghost image, run <code>docker pull ghost</code></p><p>You'll now need to set up a folder where you can keep your Ghost content, this is things like images, themes, and your SQLite database. For instance: <code>/Users/steve/stuff/ghost-content</code> </p><p>Now, to run the Ghost container, execute the following, but substitute <code>my-blog</code> with whatever you want to call your container (doesn't really matter what), and <code>/Users/steve/stuff/ghost-content</code> with the location of your content folder that you created in the previous step.</p><pre><code class="language-bash">docker run -d --name my-blog -e url=http://localhost:3002 -p 3002:2368 -v '/Users/steve/stuff/ghost-content':/var/lib/ghost/content ghost</code></pre><p>You should find that Ghost has populated your content folder with stuff:</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./../content/images/2021/09/Screenshot-2021-09-29-at-22.10.11.png" class="kg-image" alt loading="lazy" width="882" height="110"><figcaption>What your content folder should look like now</figcaption></figure><p>Now, if you head to <a href="http://localhost:3002/">http://localhost:3002</a>, you should see that your publication is running! (You may need to wait ~1 minute if the container is still spinning up).</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./../content/images/2021/09/Screenshot-2021-09-29-at-22.12.36.png" class="kg-image" alt loading="lazy" width="3840" height="2160"><figcaption>A fresh Ghost install</figcaption></figure><p>If you head to <a href="http://localhost:3002/ghost">http://localhost:3002/ghost</a>, this will display the admin page where you can set up your publication.</p><h3 id="generating-the-static-site">Generating the static site</h3><p>Now that you have Ghost running on your machine, you'll need to crawl the site to fetch the HTML files. For this I'd reccommend <a href="https://github.com/Fried-Chicken/ghost-static-site-generator">Mr Mo's Ghost Static Site Generator</a>, (GSSG) which usefully does this job for us. Thanks Mr Mo.</p><p>Follow the instructions on <a href="https://github.com/Fried-Chicken/ghost-static-site-generator#readme">the GSSG readme</a> to install it.</p><p>Next, you'll need to create a folder that you want to store your static site in. Let's call it <code>/Users/steve/stuff/ghost-static</code> for now.</p><p>From your <code>ghost-static</code> folder, run the following command. You'll need to change the <code>--dest</code> to path of the folder you just created, and the <code>--url</code> from <code>yourdomain.com</code> to the actual domain you intend on hosting the site at:</p><pre><code>gssg --domain http://localhost:3002 --dest '/Users/steve/stuff/ghost-static' --url https://yourdomain.com</code></pre><p>You should now see GSSG fetching a load of files and putting them in your static directory.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./../content/images/2021/09/Screenshot-2021-09-30-at-09.52.57.png" class="kg-image" alt loading="lazy" width="1434" height="1470"><figcaption>This can take a few minutes</figcaption></figure><h3 id="uploading-to-the-internet">Uploading to the internet</h3><p>You'll need some kind of static hosting service. I think <a href="https://pages.cloudflare.com/">Cloudflare Pages</a> offers the best performance, ease of use and price, so I'll be using that. It's free for unlimited requests, bandwidth and sites, up to 500 builds per month ATTOW. You could also use something like GitHub Pages or Netlify.</p><p>Create a GitHub repo for your static site, then upload the contents of your static folder - by now this should contain an <code>index.html</code>, some <code>xml</code> files, and possibly a number of folders, depending on how much content you have.</p><h3 id="%E2%80%8Bsign-in-to-cloudflare-pages"><a href="https://developers.cloudflare.com/pages/get-started#sign-in-to-cloudflare-pages">​</a>Sign in to Cloudflare Pages</h3><p>Go to the <a href="https://pages.dev">Cloudflare Pages site</a>, and sign in with your Cloudflare account. If you do not have an account yet, you can sign up as you go.</p><h3 id="%E2%80%8Bconnect-to-github"><a href="https://developers.cloudflare.com/pages/get-started#connect-to-github">​</a>Connect to GitHub</h3><p>Signing in with GitHub allows <a href="https://pages.dev">Cloudflare Pages</a> to deploy your projects, update your GitHub PRs with <a href="https://developers.cloudflare.com/pages/platform/preview-deployments">preview deployments</a>, and more. After you sign in, select <strong>Create a project</strong> in the Pages dashboard.</p><p>You'll then need to point Cloudflare Pages to the GitHub repo containing your static site, after which you can configure some settings such as which directory it should point at. If you've followed this tutorial closely, your static site should be stored in the root of the repo.</p><figure class="kg-card kg-image-card kg-card-hascaption"><img src="./../content/images/2021/09/Cloudflare-Pages-Configuration.png" class="kg-image" alt loading="lazy" width="984" height="349"><figcaption>Configuring Cloudflare Pages for static Ghost hosting</figcaption></figure><p>Once the first deployment has finished, you can also set up your own domain name.</p><p>That's it! You now have your writing hosted on one of the world's fastest content delivery networks, that can handle a virtually "unlimited" amount of traffic, for free.</p><h2 id="going-further-and-optimising">Going further and optimising</h2><h3 id="backups">Backups</h3><p>If you ever want to spin up your local Ghost container, it's as simple as executing the <code>docker run</code> command from the start. However if you lose your content folder, then you'll lose all your posts and your ability to run your publication locally, so I strongly recommend you back it up.</p><h3 id="turning-off-dynamic-features">Turning off dynamic features</h3><p>As dynamic features of Ghost won't work for your users, I recommend turning as many of them off as possible. From the Ghost settings, you can head to memberships to turn off subscription access.</p><figure class="kg-card kg-image-card"><img src="./../content/images/2021/09/Screenshot-2021-09-29-at-18.35.39.png" class="kg-image" alt loading="lazy" width="1508" height="746"></figure><p>You can also pick a theme that optimises for content delivery, rather than for more dynamic features of Ghost.</p><h3 id="deleting-posts">Deleting posts</h3><p>One small 'gotcha' is that if a post is deleted or renamed, the original will stay in your static folder. To get around this, ensure you periodically purge your static folder before regenerating it.</p><h3 id="database">Database</h3><p>The database used by the official Docker image is SQLite, which is fine for our use case. The database will live in your content-folder/data, so you can easily make changes to the data or back it up.</p><hr><p>I hope you find this useful. Note, this is very much a <em>beta </em>workflow, so be wary of bugs.</p>
+    </section>
 
 
-    </article>
+</article>
 </main>
 
 
 
-<aside class="read-more-wrap">
-    <div class="read-more inner">
+
+            <aside class="read-more-wrap outer">
+                <div class="read-more inner">
+                        
+<article class="post-card post">
+
+    <a class="post-card-image-link" href="./../whatsapp-as-a-note-taking-app/">
+
+        <img class="post-card-image"
+            srcset="./../content/images/size/w300/2022/06/WhatsApp-as-a-note-taking-app-2.jpg 300w,
+                    ./../content/images/size/w600/2022/06/WhatsApp-as-a-note-taking-app-2.jpg 600w,
+                    ./../content/images/size/w1000/2022/06/WhatsApp-as-a-note-taking-app-2.jpg 1000w,
+                    ./../content/images/size/w2000/2022/06/WhatsApp-as-a-note-taking-app-2.jpg 2000w"
+            sizes="(max-width: 1000px) 400px, 800px"
+            src="./../content/images/size/w600/2022/06/WhatsApp-as-a-note-taking-app-2.jpg"
+            alt="WhatsApp as a note-taking app"
+            loading="lazy"
+        />
 
 
-                    
-<article class="post-card post ">
+    </a>
+
+    <div class="post-card-content">
+
+        <a class="post-card-content-link" href="./../whatsapp-as-a-note-taking-app/">
+            <header class="post-card-header">
+                <div class="post-card-tags">
+                </div>
+                <h2 class="post-card-title">
+                    WhatsApp as a note-taking app
+                </h2>
+            </header>
+                <div class="post-card-excerpt">For short form note taking, WhatsApp is actually the best option I've found. It's fast, secure, available on all my devices, synchronised, searchable and free.</div>
+        </a>
+
+        <footer class="post-card-meta">
+            <time class="post-card-meta-date" datetime="2022-06-22">Jun 22, 2022</time>
+                <span class="sep">—</span>
+                <span class="post-card-meta-length">2 min read</span>
+        </footer>
+
+    </div>
+
+</article>
+                        
+<article class="post-card post">
 
     <a class="post-card-image-link" href="./../photos-of-north-korea/">
+
         <img class="post-card-image"
             srcset="./../content/images/size/w300/2021/09/North-Korea-1-2.jpg 300w,
                     ./../content/images/size/w600/2021/09/North-Korea-1-2.jpg 600w,
@@ -193,40 +258,42 @@
             alt="Photos of North Korea"
             loading="lazy"
         />
+
+
     </a>
 
     <div class="post-card-content">
 
         <a class="post-card-content-link" href="./../photos-of-north-korea/">
             <header class="post-card-header">
-                <h2 class="post-card-title">Photos of North Korea</h2>
+                <div class="post-card-tags">
+                </div>
+                <h2 class="post-card-title">
+                    Photos of North Korea
+                </h2>
             </header>
-            <div class="post-card-excerpt">
-                <p>I spent some time in North Korea (DPRK), via a specialist travel agency. I didn't get as many good photos as I would have liked, but below are some of the better ones. Pyongyang with "traffic lady"DMZ and paintingVarious signs and sources of kitschPeople in China, taking a peek</p>
-            </div>
+                <div class="post-card-excerpt">I spent some time in North Korea (DPRK
+[https://en.wikipedia.org/wiki/North_Korea]), via a specialist travel agency. I
+didn't get as many good photos as I would have liked, but below are some of the
+better ones.
+
+Pyongyang with "traffic lady"DMZ and paintingVarious signs and sources</div>
         </a>
 
         <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-                    <a href="./../author/steve/" class="static-avatar">
-                        <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
-                    </a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/steve/">Steve Barker</a></span>
-                <span class="post-card-byline-date"><time datetime="2021-07-28">Jul 28, 2021</time> <span class="bull">&bull;</span> 3 min read</span>
-            </div>
+            <time class="post-card-meta-date" datetime="2021-07-28">Jul 28, 2021</time>
+                <span class="sep">—</span>
+                <span class="post-card-meta-length">3 min read</span>
         </footer>
 
     </div>
 
 </article>
-                    
-<article class="post-card post ">
+                        
+<article class="post-card post">
 
     <a class="post-card-image-link" href="./../my-ideal-fudge-recipe/">
+
         <img class="post-card-image"
             srcset="./../content/images/size/w300/2020/12/12---Baking-3-1.jpg 300w,
                     ./../content/images/size/w600/2020/12/12---Baking-3-1.jpg 600w,
@@ -237,90 +304,58 @@
             alt="My Ideal Fudge Recipe"
             loading="lazy"
         />
+
+
     </a>
 
     <div class="post-card-content">
 
         <a class="post-card-content-link" href="./../my-ideal-fudge-recipe/">
             <header class="post-card-header">
-                <h2 class="post-card-title">My Ideal Fudge Recipe</h2>
+                <div class="post-card-tags">
+                </div>
+                <h2 class="post-card-title">
+                    My Ideal Fudge Recipe
+                </h2>
             </header>
-            <div class="post-card-excerpt">
-                <p>The only difficult thing about making delicious fudge is how long and at what temperature to cook it for. IngredientsMakes: ~900g of fudge  550g demerara sugar 100g butter 170g golden syrup 1.5-2 tps sea salt flakes 30g maple syrup 350ml double cream 1 tsp vanilla extract Optional:  Sugar thermometer</p>
-            </div>
+                <div class="post-card-excerpt">The only difficult thing about making delicious fudge is how long and at what
+temperature to cook it for.
+
+Ingredients
+Makes: ~900g of fudge
+
+ * 550g demerara sugar
+ * 100g butter
+ * 170g golden syrup
+ * 1.5-2 tps sea salt flakes
+ * 30g maple syrup
+ * 350ml double cream
+ * 1 tsp vanilla extract
+
+Optional:
+
+ * Sugar</div>
         </a>
 
         <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-                    <a href="./../author/steve/" class="static-avatar">
-                        <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
-                    </a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/steve/">Steve Barker</a></span>
-                <span class="post-card-byline-date"><time datetime="2020-12-19">Dec 19, 2020</time> <span class="bull">&bull;</span> 3 min read</span>
-            </div>
+            <time class="post-card-meta-date" datetime="2020-12-19">Dec 19, 2020</time>
+                <span class="sep">—</span>
+                <span class="post-card-meta-length">3 min read</span>
         </footer>
 
     </div>
 
 </article>
-                    
-<article class="post-card post ">
+                </div>
+            </aside>
 
-    <a class="post-card-image-link" href="./../how-we-reduced-our-failed-payment-rate-by-92-per-cent/">
-        <img class="post-card-image"
-            srcset="./../content/images/size/w300/2021/03/pre-auth-flow-1.png 300w,
-                    ./../content/images/size/w600/2021/03/pre-auth-flow-1.png 600w,
-                    ./../content/images/size/w1000/2021/03/pre-auth-flow-1.png 1000w,
-                    ./../content/images/size/w2000/2021/03/pre-auth-flow-1.png 2000w"
-            sizes="(max-width: 1000px) 400px, 800px"
-            src="./../content/images/size/w600/2021/03/pre-auth-flow-1.png"
-            alt="How we reduced our failed payment rate by 92%"
-            loading="lazy"
-        />
-    </a>
-
-    <div class="post-card-content">
-
-        <a class="post-card-content-link" href="./../how-we-reduced-our-failed-payment-rate-by-92-per-cent/">
-            <header class="post-card-header">
-                <h2 class="post-card-title">How we reduced our failed payment rate by 92%</h2>
-            </header>
-            <div class="post-card-excerpt">
-                <p>Originally posted on Gousto Engineering &amp; Data Most Gousto customers choose to get their recipe boxes on a subscription basis: every week they choose their recipes from our menu, and we pick, pack and deliver them to their door. To give customers as much flexibility as possible, we let customers</p>
-            </div>
-        </a>
-
-        <footer class="post-card-meta">
-            <ul class="author-list">
-                <li class="author-list-item">
-                    <a href="./../author/steve/" class="static-avatar">
-                        <img class="author-profile-image" src="./../content/images/size/w100/2021/09/ben-sweet-2LowviVHZ-E-unsplash.jpg" alt="Steve Barker" />
-                    </a>
-                </li>
-            </ul>
-            <div class="post-card-byline-content">
-                <span><a href="./../author/steve/">Steve Barker</a></span>
-                <span class="post-card-byline-date"><time datetime="2020-11-16">Nov 16, 2020</time> <span class="bull">&bull;</span> 4 min read</span>
-            </div>
-        </footer>
-
-    </div>
-
-</article>
-
-    </div>
-</aside>
 
 
     </div>
 
     <footer class="site-footer outer">
         <div class="inner">
-            <section class="copyright"><a href="https://sgbarker.com/blog">Steve Barker</a> &copy; 2021</section>
+            <section class="copyright"><a href="https://sgbarker.com/blog">Steve Barker</a> &copy; 2022</section>
             <nav class="site-footer-nav">
                 <ul class="nav">
     <li class="nav-contact"><a href="mailto:webcontact@sgbarker.com">Contact</a></li>
@@ -341,7 +376,7 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
     crossorigin="anonymous">
 </script>
-<script src="./../assets/built/casper.js?v=0b77b853a1"></script>
+<script src="./../assets/built/casper.js?v=b603508097"></script>
 <script>
 $(document).ready(function () {
     // Mobile Menu Trigger
